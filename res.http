@@ -1,0 +1,20 @@
+# POST http://localhost:8000/auth/register/
+# Content-Type: application/json
+
+# {
+#     "first_name" : "Samson",
+#     "last_name" : "Amos",
+#     "email" : "v2dent@gmail.com",
+#     "password" : "Chelsea24462!"
+# }
+
+# POST  http://localhost:8000/auth/login/
+# Content-Type: application/json
+
+# {
+#     "email" : "v2dent@gmail.com",
+#     "password": "Chelsea24462!"
+# }
+
+GET http://localhost:8000/auth/me/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY3NTExMzg5LCJleHAiOjE2Njc1NTQ1ODl9.aVsUjdYmBXk9r_Xn4mPiMnhlKajGFpe_7BpH4XoCZmo
