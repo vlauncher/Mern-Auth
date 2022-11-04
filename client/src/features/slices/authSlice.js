@@ -33,8 +33,12 @@ export const login = createAsyncThunk('auth/login',async(userdata,thunkApi)=>{
         }
         return response.data
     } catch (error) {
-         const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
-        return thunkApi.rejectWithValue(message)
+        if(error.response && error.response.data.message){
+            const message = error.response.data.message
+            return thunkApi.rejectWithValue(message)
+        } else {
+            return thunkApi.rejectWithValue(error.message)
+        }
     }
 })
 export const logout = createAsyncThunk('auth/logout',async ()=>{
